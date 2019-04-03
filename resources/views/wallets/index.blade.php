@@ -21,6 +21,17 @@
                             </div>
                         </div>
                         @endif
+                        @if(session('error'))
+                        <div class="noti-alert pad no-print">
+                            <div class="alert alert-danger alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                <h4><i class="icon fa fa-check"></i> Error</h4>
+                                <ul>
+                                    <li>{{ session('error') }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        @endif
                         <div>
                             <a href="{{ url('wallets/create') }}">Create Wallet</a>
                             <br />

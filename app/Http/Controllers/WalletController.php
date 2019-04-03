@@ -27,6 +27,8 @@ class WalletController extends Controller
 	
 	public function store(Request $request)
 	{
+		if( is_null($request->title) || is_null($request->type) ) 
+	        return redirect('/wallets')->with('error', 'Error');
 	    $wallet = new Wallet();
 	    $wallet->title = $request->title;
 	    $wallet->type = $request->type;
